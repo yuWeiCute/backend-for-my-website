@@ -9,30 +9,9 @@ export default {
       type: 'string',
     },
     {
-      name: 'about',
-      title: 'About',
+      name: 'description',
+      title: 'Description',
       type: 'string',
-    },
-    {
-      name: 'destination',
-      title: 'Destination',
-      type: 'url',
-    },
-    {
-      name: 'github',
-      title: 'gitHub',
-      type: 'url',
-    },
-    {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
-    },
-        {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
     },
     {
       name: 'image',
@@ -43,6 +22,42 @@ export default {
       },
     },
     {
+      name: 'projectLink',
+      title: 'Project Link',
+      type: 'string',
+    },
+    {
+      name: 'codeLink',
+      title: 'Code Link',
+      type: 'string',
+    },
+    {
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [
+        {
+          name:'category',
+          title:'Category',
+          type:'string'
+        }
+      ]
+    },
+    {
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'datetime',
+    },
+    
+    {
+      name: 'body',
+      title: 'Body',
+      type: 'blockContent',
+    },
+
+
+    // 发布者的id
+    {
       name: 'userId',
       title: 'UserId',
       type: 'string',
@@ -52,6 +67,9 @@ export default {
       title: 'PostedBy',
       type: 'postedBy',
     },
+    //
+
+
     {
       name: 'save',
       title: 'Save',
@@ -65,4 +83,5 @@ export default {
       of: [{ type: 'comment' }],
     },
   ],
+
 };
