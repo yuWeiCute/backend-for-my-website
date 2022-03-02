@@ -5,7 +5,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 //to make a portfolio
-import works from './works'
+
 import abouts from './abouts'
 import experiences from './experiences'
 import skills from './skills'
@@ -21,9 +21,9 @@ import save from './save';
 
 //to make a blog
 import blockContent from './blockContent'
-import category from './category'
-import post from './post'
-import author from './author'
+
+
+
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -32,9 +32,9 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    works,  abouts, skills, workExperience, experiences, contact,
+    abouts, skills, workExperience, experiences, contact,
     pin, user, postedBy, comment, save,
-    post,author,category,blockContent,
+    blockContent,
     /* Your types here! */
   ]),
 })

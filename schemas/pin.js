@@ -32,6 +32,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'downLink',
+      title: 'Down Link',
+      type: 'string',
+    },
+    {
       name: 'categories',
       title: 'Categories',
       type: 'array',
