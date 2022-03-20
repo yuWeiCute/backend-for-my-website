@@ -1,7 +1,10 @@
+import { GiNotebook } from 'react-icons/gi';
+
 export default {
   name: 'pin',
   title: 'Pin',
   type: 'document',
+  icon: GiNotebook,
   fields: [
     {
       name: 'title',
@@ -12,6 +15,11 @@ export default {
       name: 'description',
       title: 'Description',
       type: 'string',
+    },
+    {
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'datetime',
     },
     {
       name: 'image',
@@ -32,11 +40,6 @@ export default {
       type: 'string',
     },
     {
-      name: 'downLink',
-      title: 'Down Link',
-      type: 'string',
-    },
-    {
       name: 'categories',
       title: 'Categories',
       type: 'array',
@@ -46,21 +49,21 @@ export default {
           title:'Category',
           type:'string'
         }
-      ]
+      ],
+      // validation: Rule => Rule.unique()
     },
-    {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-    },
-    
+
+    // body
     {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
     },
-
-
+    {
+      name: 'richtext',
+      title: 'Richtext',
+      type: 'string',
+    },
     // 发布者的id
     {
       name: 'userId',
@@ -73,13 +76,12 @@ export default {
       type: 'postedBy',
     },
     //
-
-
     {
       name: 'save',
       title: 'Save',
       type: 'array',
       of: [{ type: 'save' }],
+      validation: Rule => Rule.unique()
     },
     {
       name: 'comments',

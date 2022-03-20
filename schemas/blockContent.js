@@ -1,3 +1,6 @@
+import { MdCode } from 'react-icons/md';
+
+
 /**
  * This is the schema definition for the rich text fields used for
  * for this blog studio. When you import it in schemas.js it can be
@@ -28,7 +31,10 @@ export default {
         {title: 'H4', value: 'h4'},
         {title: 'Quote', value: 'blockquote'},
       ],
-      lists: [{title: 'Bullet', value: 'bullet'}],
+      lists: [
+        { title: 'Bullet', value: 'bullet' },
+        { title: 'Number', value: 'number' },
+      ],
       // Marks let you mark up inline text in the block editor.
       marks: {
         // Decorators usually describe a single property – e.g. a typographic
@@ -58,8 +64,51 @@ export default {
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
     {
+      name: 'customImage',
+      title: 'Image',
       type: 'image',
-      options: {hotspot: true},
+      // icon: MdImage,
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          title: 'Alt Text',
+          name: 'alt',
+          type: 'string',
+          validation: (Rule) => Rule.error("Alt text can't be empty").required(),
+          options: {
+            isHighlighted: true,
+          },
+        },
+      ],
+      preview: {
+        select: {
+          imageUrl: 'asset.url',
+          alt: 'alt',
+        },
+      },
     },
-  ],
+
+    
+    {
+      name: 'customCode',
+      title: 'Code',
+      type: 'object',
+      icon: MdCode,
+      fields: [
+        {
+          name: 'code',
+          title: 'Code',
+          type: 'code',
+        },
+      ],
+      preview: {
+        select: {
+          title: 'code.code',
+        },
+      },
+    }
+
+  ]
 }
