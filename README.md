@@ -1,9 +1,19 @@
-# Sanity Clean Content Studio
+# Sanity Content Studio
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
 
-Now you can do the following things:
+博文：
+key[解释的唯一编码];     
+[array]: title[string]; description[string]; publishAt[datetime]; image[image]; links[string]; categoriesID[array]; userID[string]; comment[array]; richtext[string]
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+用户：
+key[userID];     
+[array]: userName[string]; role[string]; platform[string]; image[string]; savePostID[string]; publishPostID[string];
+
+分类：
+key[categoriesID]; 
+[array]: categoryName[string]; imageUrl[string]
+
+角色-权限列表：
+key[解释的唯一编码];  
+[array]: role[string]; accessControl[array]
+
