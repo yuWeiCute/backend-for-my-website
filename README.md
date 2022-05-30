@@ -1,7 +1,7 @@
 # Sanity Content Studio
 
 
-博文：
+## 博文：     
 key[解释的唯一编码];       
 [array]:     
 1. title[string];    
@@ -14,7 +14,7 @@ key[解释的唯一编码];
 8. comment[array];    
 9. richtext[string]   
 
-用户： 
+## 用户：     
 key[userID];       
 [array]:      
 1. userName[string];    
@@ -24,13 +24,13 @@ key[userID];
 5. savePostID[string];   
 6. publishPostID[string];    
 
-分类：   
+## 分类：    
 key[categoriesID];    
 [array]:      
 1. categoryName[string];      
 2. imageUrl[string]  
 
-角色-权限列表：      
+## 角色-权限列表：       
 key[解释的唯一编码];     
 [array]:      
 1. role[string];     
